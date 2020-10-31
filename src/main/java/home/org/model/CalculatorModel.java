@@ -10,26 +10,21 @@ import java.io.Serializable;
 @Getter
 @Setter
 @NoArgsConstructor
+@RequiredArgsConstructor
 public class CalculatorModel implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
+    @NonNull
     @Column (name="actions")
     private String function;
-
+    @NonNull
     @Column (name="inputValues")
     private String input;
-
+    @NonNull
     @Column (name="outputValues")
     private String output;
-
-    public CalculatorModel(String function, String input, String output) {
-        this.function = function;
-        this.input = input;
-        this.output = output;
-    }
 
     @Override
     public String toString() {
